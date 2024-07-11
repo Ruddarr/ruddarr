@@ -41,7 +41,7 @@ struct CachedAsyncImage: View {
                     let _: Void = print(state.error.debugDescription)
 
                     PlaceholderImage(icon: "network.slash", text: nil)
-                        .transition(.identity) // there's an implicit animation now, so disable fading out, remove it instantly
+                        .transition(.identity) // there's an implicit animation now, so disable fading out, remove it instantly. // TODO: on second thought, maybe it would have been better to use .transaction to disable the animation for this view, instead of changing the transaction. Haven't explored that option.
                 } else {
                     PlaceholderImage(icon: "text.below.photo", text: nil)
                         .transition(.identity) // there's an implicit animation now, so disable fading out, remove it instantly
