@@ -27,9 +27,11 @@ struct Ruddarr: App {
             .windowResizability(.contentSize)
         #else
             WindowGroup {
-                ContentView()
-                    .withAppState()
-                    .onOpenURL(perform: openDeeplink)
+                CachedAsyncImage(.poster, "https://picsum.photos/200/300")
+                    
+//                ContentView()
+//                    .withAppState()
+//                    .onOpenURL(perform: openDeeplink)
             }
         #endif
     }

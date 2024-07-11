@@ -32,9 +32,11 @@ struct CachedAsyncImage: View {
         if url == nil {
             PlaceholderImage(icon: "text.below.photo", text: placeholder)
         } else {
-            LazyImage(request: imageRequest(url)) { state in
+            LazyImage(request: imageRequest(url), transaction: .init(animation: .default)) { state in
                 if let image = state.image {
+                    let isFromCache = (try? state.result?.get())?.cacheType != nil
                     image.resizable()
+                        .transition(isFromCache ? .identity: .opacity)
                 } else if state.error != nil {
                     let _: Void = print(state.error.debugDescription)
 
@@ -42,7 +44,8 @@ struct CachedAsyncImage: View {
                 } else {
                     PlaceholderImage(icon: "text.below.photo", text: nil)
                 }
-            }.pipeline(
+            }
+            .pipeline(
                 imagePipeline()
             )
         }
@@ -57,7 +60,7 @@ struct CachedAsyncImage: View {
 
         return ImagePipeline(configuration: config)
     }
-
+    // TODO: urlString shouldn't be optional if we later force unwrap it
     func imageRequest(_ urlString: String?) -> ImageRequest {
         let url = URL(string: urlString!)
         let request = URLRequest(url: url!, timeoutInterval: 5)
