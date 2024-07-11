@@ -32,7 +32,7 @@ struct CachedAsyncImage: View {
         if url == nil {
             PlaceholderImage(icon: "text.below.photo", text: placeholder)
         } else {
-            LazyImage(request: imageRequest(url), transaction: .init(animation: .default)) { state in
+            LazyImage(request: imageRequest(url), transaction: .init(animation: .easeInOut(duration: 5))) { state in
                 if let image = state.image {
                     let isFromCache = (try? state.result?.get())?.cacheType != nil
                     image.resizable()
@@ -41,8 +41,10 @@ struct CachedAsyncImage: View {
                     let _: Void = print(state.error.debugDescription)
 
                     PlaceholderImage(icon: "network.slash", text: nil)
+                        .transition(.identity) // there's an implicit animation now, so disable fading out, remove it instantly
                 } else {
                     PlaceholderImage(icon: "text.below.photo", text: nil)
+                        .transition(.identity) // there's an implicit animation now, so disable fading out, remove it instantly
                 }
             }
             .pipeline(
