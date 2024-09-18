@@ -113,6 +113,17 @@
         }
       }
     },
+    "%@ on %@" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ on %@"
+          }
+        }
+      }
+    },
     "%@." : {
       "comment" : "Prefix for episode title (episode number)",
       "localizations" : {
@@ -502,6 +513,29 @@
         }
       }
     },
+    "%lld Seasons" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld Season"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "%lld Seasons"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "%lld Tasks" : {
       "localizations" : {
         "de" : {
@@ -782,6 +816,9 @@
         }
       }
     },
+    "Add Movie with ${name}" : {
+
+    },
     "Add Series" : {
       "localizations" : {
         "de" : {
@@ -809,6 +846,9 @@
           }
         }
       }
+    },
+    "Add TV Series with ${title}" : {
+
     },
     "Added" : {
       "localizations" : {
@@ -4398,6 +4438,17 @@
         }
       }
     },
+    "Grid" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grid"
+          }
+        }
+      }
+    },
     "Headers" : {
       "localizations" : {
         "de" : {
@@ -5351,6 +5402,17 @@
         }
       }
     },
+    "Layout" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Layout"
+          }
+        }
+      }
+    },
     "Leave a Review" : {
       "localizations" : {
         "de" : {
@@ -5431,6 +5493,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lien"
+          }
+        }
+      }
+    },
+    "List" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "List"
           }
         }
       }
